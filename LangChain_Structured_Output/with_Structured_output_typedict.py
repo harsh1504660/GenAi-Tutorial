@@ -1,16 +1,20 @@
 from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-from typing import TypedDict
+from typing import TypedDict,Annotated
 
 load_dotenv()
 
 
 
 #schema
-class Review(TypedDict):
+"""class Review(TypedDict):
     summary: str
-    sentiment: str
+    sentiment: str"""
+
+class Review(TypedDict):
+    summary: Annotated[str, "A brief summary of the review"]
+    sentiment: Annotated[str, "The overall sentiment of the review, e.g., positive, negative, neutral"]
 
 model = ChatOpenAI()
 

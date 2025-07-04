@@ -52,8 +52,8 @@ prompt = PromptTemplate(
     Answer ONLY from provided transcript context.
     if the context is insufficient just say you dont know,
     \n
-    context : {context} \n
-    Question : {question}
+    context : {context}\n
+    Question : {question} 
 """,
 input_variables=["context","question"]
 
